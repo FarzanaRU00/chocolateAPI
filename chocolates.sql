@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS chocolates;
+
+CREATE TABLE chocolates (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    country TEXT NOT NULL
+);

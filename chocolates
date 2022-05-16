@@ -1,0 +1,36 @@
+CREATE TABLE chocolates(
+    id integer NOT NULL, 
+    name text NOT NULL, 
+    country text NOT NULL
+    );
+
+INSERT INTO chocolates VALUES (1, "Snickers", "American");
+INSERT INTO chocolates VALUES (2, "Fruit and Nut", "British");
+INSERT INTO chocolates VALUES (3, "Kinder Bueno", "Italian");
+
+SELECT * FROM chocolates;
+
+SELECT * FROM chocolates WHERE id IS 1;
+
+ALTER TABLE chocolates ADD COLUMN year_established integer NOT NULL;
+
+UPDATE chocolates SET year_established = 1930 WHERE id=1;
+UPDATE chocolates SET year_established = 1926 WHERE id=2;
+UPDATE chocolates SET year_established = 1990 WHERE id=3;
+
+DELETE FROM chocolates WHERE year_established >= 1950;
+
+
+
+
+CREATE TABLE crisps (
+    id integer NOT NULL, 
+    flavour NOT NULL, 
+    country NOT NULL
+    );
+
+INSERT INTO crisps VALUES (1, "Cheese and Onion", "British");
+
+SELECT * FROM chocolates INNER JOIN crisps on chocolates.id = crisps.id;
+
+SELECT chocolates.id, chocolates.name, chocolates.country, chocolates.year_established, crisps.flavour FROM chocolates INNER JOIN crisps on chocolates.id = crisps.id;

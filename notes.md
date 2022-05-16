@@ -1,0 +1,1 @@
+SQLite commands are uppercase and user information is lowercase. Lines must end with a semicolon
